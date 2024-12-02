@@ -138,7 +138,7 @@ function music_play(es) {
 
 //Playing 
 async function main() {
-    lists = await music(`Smooth`);
+    lists = await music(``);
     
     displayAlbums();
    
