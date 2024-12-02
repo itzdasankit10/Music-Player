@@ -6,7 +6,7 @@ let currentFolder;
 async function music(folder) {
     
     currentFolder = folder;
-    let songs = await fetch(`https://itzdasankit10.github.io/Music-Player/Songs/${folder}`);
+    let songs = await fetch(`https://github.com/itzdasankit10/Music-Player/tree/main/Songs/${folder}`);
     let song = await songs.text();
 
     let div = document.createElement("div");
@@ -54,7 +54,7 @@ async function music(folder) {
     
 }
 async function displayAlbums() {
-    let album = await fetch(`https://itzdasankit10.github.io/Music-Player/Songs/`);
+    let album = await fetch(`https://github.com/itzdasankit10/Music-Player/tree/main/Songs/`);
     let albums = await album.text();
     let div = document.createElement("div");
     div.innerHTML = albums; // Parse the HTML string into DOM elements.
@@ -66,7 +66,7 @@ async function displayAlbums() {
         const e = array[index];
         if (e.href.includes("/Songs/")) {
             let folder = e.href.split("/").slice(-2)[0];
-            let a = await fetch(`https://itzdasankit10.github.io/Music-Player/Songs/${folder}/info.json`);
+            let a = await fetch(`https://github.com/itzdasankit10/Music-Player/tree/main/Songs/${folder}/info.json`);
             let as = await a.json();
             
             cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}"  class="card-1">
@@ -99,7 +99,7 @@ function music_play(es) {
     
     let songs_name = es;
     //Playing The Song
-    currentSong.src = es.innerHTML = `https://itzdasankit10.github.io/Music-Player/Songs/${currentFolder}/${songs_name.replaceAll(" ", "%20")}`;
+    currentSong.src = es.innerHTML = `https://github.com/itzdasankit10/Music-Player/tree/main/Songs/${currentFolder}/${songs_name.replaceAll(" ", "%20")}`;
     currentSong.play();
     play_song.src = "IMAGES/play.svg";
 
